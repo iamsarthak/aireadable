@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIReadable - Make Any Document AI Ready</title>
+    <meta name="description" content="Extract high-quality text from PDFs and images for perfect input to ChatGPT, Claude, and other AI models. Join the waitlist today!">
+    
+    <!-- Favicon - Add your own favicon file -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    
+    <!-- Mailchimp Form Styles -->
+    <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary: #4361ee;
+            --primary-dark: #3a0ca3;
+            --secondary: #4cc9f0;
+            --accent: #7209b7;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --success: #02c39a;
+            --warning: #ffbe0b;
+            --danger: #e63946;
+            --gray-100: #f8f9fa;
+            --gray-200: #e9ecef;
+            --gray-300: #dee2e6;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+        }
+        
+        .text-gradient {
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background: white;
+            border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+        }
+        
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        /* Waitlist Section */
+        .waitlist-section {
+            padding: 80px 0;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .waitlist-container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+            margin-top: -180px;
+            position: relative;
+        }
+        
+        /* Features */
+        .feature-card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            height: 100%;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--gray-200);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary);
+        }
+        
+        .feature-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            border-radius: 14px;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        
+        /* How it Works */
+        .how-it-works {
+            background-color: var(--gray-100);
+            padding: 100px 0;
+            position: relative;
+        }
+        
+        .step-card {
+            text-align: center;
+            padding: 30px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            height: 100%;
+            transition: all 0.3s ease;
+            border: 1px solid var(--gray-200);
+        }
+        
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary);
+        }
+        
+        .step-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            font-size: 24px;
+            font-weight: 700;
+            margin: 0 auto 20px;
+        }
+        
+        /* Testimonials */
+        .testimonial-card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            height: 100%;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--gray-200);
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary);
+        }
+        
+        .testimonial-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+            background-color: var(--gray-300);
+        }
+        
+        /* Pricing */
+        .pricing-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            height: 100%;
+            border: 1px solid var(--gray-200);
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary);
+        }
+        
+        .pricing-header {
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid var(--gray-200);
+        }
+        
+        .pricing-popular {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .pricing-popular .text-muted {
+            color: rgba(255, 255, 255, 0.8) !important;
+        }
+        
+        .pricing-price {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin: 20px 0;
+        }
+        
+        .pricing-body {
+            padding: 30px;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.1;
+        }
+        
+        /* Counter section */
+        .counter-section {
+            padding: 80px 0;
+        }
+        
+        .counter-card {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            height: 100%;
+            transition: all 0.3s ease;
+            border: 1px solid var(--gray-200);
+        }
+        
+        .counter-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary);
+        }
+        
+        .counter-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .counter-label {
+            font-size: 1.1rem;
+            color: var(--dark);
+        }
+        
+        /* FAQ */
+        .accordion-item {
+            border: 1px solid var(--gray-200);
+            margin-bottom: 15px;
+            border-radius: 10px !important;
+            overflow: hidden;
+        }
+        
+        .accordion-button {
+            background-color: white;
+            font-weight: 600;
+            padding: 20px;
+        }
+        
+        .accordion-button:not(.collapsed) {
+            background-color: var(--light);
+            color: var(--primary);
+        }
+        
+        .accordion-button:focus {
+            box-shadow: none;
+            border-color: var(--gray-300);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 80px 0 30px;
+        }
+        
+        footer a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        footer a:hover {
+            color: white;
+        }
+        
+        footer ul {
+            padding-left: 0;
+        }
+        
+        footer ul li {
+            margin-bottom: 10px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            margin-right: 10px;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        /* Mailchimp Form Customization */
+        #mc_embed_signup {
+            background: transparent !important;
+            clear: left;
+            font-family: 'Inter', sans-serif !important;
+            width: 100%;
+        }
+        
+        #mc_embed_signup h2 {
+            font-weight: 700 !important;
+            margin-bottom: 20px !important;
+            text-align: center;
+            color: var(--primary);
+        }
+        
+        #mc_embed_signup .button {
+            background-color: var(--primary) !important;
+            height: 50px !important;
+            font-size: 16px !important;
+            font-weight: 600 !important;
+            width: 100% !important;
+            margin-top: 10px !important;
+            transition: all 0.3s ease !important;
+            border-radius: 8px !important;
+        }
+        
+        #mc_embed_signup .button:hover {
+            background-color: var(--primary-dark) !important;
+            cursor: pointer !important;
+        }
+        
+        #mc_embed_signup .mc-field-group {
+            width: 100% !important;
+            padding-bottom: 2% !important;
+        }
+        
+        #mc_embed_signup .mc-field-group label {
+            font-weight: 500 !important;
+            margin-bottom: 5px !important;
+        }
+        
+        #mc_embed_signup input {
+            border-radius: 8px !important;
+            padding: 12px !important;
+            font-size: 16px !important;
+            border: 1px solid var(--gray-300) !important;
+        }
+        
+        #mc_embed_signup input:focus {
+            border-color: var(--primary) !important;
+            box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.15) !important;
+        }
+        
+        #mc_embed_signup select {
+            border-radius: 8px !important;
+            padding: 12px !important;
+            height: auto !important;
+            font-size: 16px !important;
+            border: 1px solid var(--gray-300) !important;
+        }
+        
+        #mc_embed_signup div.response {
+            margin: 15px 0 !important;
+            padding: 15px !important;
+            font-weight: normal !important;
+            border-radius: 8px !important;
+            width: 100% !important;
+        }
+        
+        #mc_embed_signup #mce-success-response {
+            background-color: rgba(2, 195, 154, 0.1) !important;
+            color: var(--success) !important;
+        }
+        
+        #mc_embed_signup #mce-error-response {
+            background-color: rgba(230, 57, 70, 0.1) !important;
+            color: var(--danger) !important;
+        }
+        
+        /* Hide Mailchimp badge if desired */
+        .optionalParent p {
+            display: none !important;
+        }
+        
+        /* Button styles */
+        .btn {
+            padding: 12px 24px;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            border-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-light {
+            background-color: white;
+            border-color: white;
+            color: var(--primary);
+        }
+        
+        .btn-light:hover {
+            background-color: #f8f9fa;
+            color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-outline-primary {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-outline-primary:hover {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-lg {
+            padding: 15px 30px;
+            font-size: 1.1rem;
+        }
+        
+        /* Responsive spacing */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 80px 0;
+            }
+            
+            .waitlist-container {
+                margin-top: -100px;
+                padding: 30px 20px;
+            }
+            
+            .counter-number {
+                font-size: 2.5rem;
+            }
+            
+            .section-padding {
+                padding: 60px 0;
+            }
+        }
+        
+        .section-padding {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: var(--primary);">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">AIReadable</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#how-it-works">How It Works</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#pricing">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#faq">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-light text-primary ms-2 px-4" href="#waitlist">Join Waitlist</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <h1>Make Any Document <span class="d-block">AI Readable</span></h1>
+                    <p>Extract high-quality text from PDFs and images for perfect input to ChatGPT, Claude, and other AI models. No more copy & paste. No more broken formatting.</p>
+                    <a href="#waitlist" class="btn btn-light btn-lg me-3">Join Waitlist</a>
+                    <a href="#how-it-works" class="btn btn-outline-light btn-lg">Learn More</a>
+                </div>
+                <div class="col-lg-6 d-none d-lg-block" data-aos="fade-left">
+                    <img src="https://placehold.co/600x400/4361ee/FFFFFF/png?text=AIReadable" alt="Document to AI conversion" class="img-fluid rounded-3 shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Waitlist Section -->
+    <section id="waitlist" class="waitlist-section">
+        <div class="container">
+            <div class="waitlist-container" data-aos="fade-up">
+                <div class="row">
+                    <div class="col-lg-10 mx-auto">
+                        <!-- Begin Mailchimp Signup Form -->
+                        <div id="mc_embed_shell">
+                            <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
+                            <style type="text/css">
+                                  #mc_embed_signup{background:#fff; false;clear:left; font:14px Helvetica,Arial,sans-serif; width: 100%;}
+                                  /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+                                     We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+                          </style>
+                          <div id="mc_embed_signup">
+                              <form action="https://gmail.us17.list-manage.com/subscribe/post?u=8fd1ae62e2d4081f9ad842145&amp;id=56b5525f75&amp;f_id=0030f7e2f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+                                  <div id="mc_embed_signup_scroll"><h2>Join the AIReadable Waitlist</h2>
+                                      <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+                                      <div class="mc-field-group"><label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label><input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" value=""></div>
+                                  <div id="mce-responses" class="clear foot">
+                                      <div class="response" id="mce-error-response" style="display: none;"></div>
+                                      <div class="response" id="mce-success-response" style="display: none;"></div>
+                                  </div>
+                              <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                                  <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups -->
+                                  <input type="text" name="b_8fd1ae62e2d4081f9ad842145_56b5525f75" tabindex="-1" value="">
+                              </div>
+                                  <div class="optionalParent">
+                                      <div class="clear foot">
+                                          <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Join Waitlist">
+                                          <p style="margin: 0px auto;"><a href="http://eepurl.com/i_HETU" title="Mailchimp - email marketing made easy and fun"><span style="display: inline-block; background-color: transparent; border-radius: 4px;"><img class="refferal_badge" src="https://digitalasset.intuit.com/render/content/dam/intuit/mc-fe/en_us/images/intuit-mc-rewards-text-dark.svg" alt="Intuit Mailchimp" style="width: 220px; height: 40px; display: flex; padding: 2px 0px; justify-content: center; align-items: center;"></span></a></p>
+                                      </div>
+                                  </div>
+                              </div>
+                          </form>
+                          </div>
+                          <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script><script type="text/javascript">(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';fnames[6]='COMPANY';ftypes[6]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+                        </div>
+                        <!--End Mailchimp Signup Form-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="section-padding">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2 class="fw-bold">Why Choose <span class="text-gradient">AIReadable</span>?</h2>
+                <p class="lead text-muted">We're solving the missing link in the AI workflow</p>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Feature 1 -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="0">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-text-paragraph"></i>
+                        </div>
+                        <h3>Perfect Text Extraction</h3>
+                        <p>Extract clean, structured text from any document with our advanced OCR technology that preserves the formatting AI needs to understand.</p>
+                    </div>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-table"></i>
+                        </div>
+                        <h3>Table Recognition</h3>
+                        <p>Our smart table detection preserves data relationships and formatting, making complex information accessible to LLMs for analysis.</p>
+                    </div>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-lightning-charge"></i>
+                        </div>
+                        <h3>Instant Processing</h3>
+                        <p>Get your documents processed in seconds, not minutes, with our optimized OCR pipeline built for speed and accuracy.</p>
+                    </div>
+                </div>
+                
+                <!-- Feature 4 -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="0">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-file-earmark-text"></i>
+                        </div>
+                        <h3>Multiple Document Types</h3>
+                        <p>Support for PDFs, scanned documents, JPEGs, PNGs, and more - if it contains text, we can extract it for your AI tools.</p>
+                    </div>
+                </div>
+                
+                <!-- Feature 5 -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-braces"></i>
+                        </div>
+                        <h3>Structure Preservation</h3>
+                        <p>We maintain headings, paragraphs, and document hierarchy so AI models can better understand the context and organization.</p>
+                    </div>
+                </div>
+                
+                <!-- Feature 6 -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-shield-check"></i>
+                        </div>
+                        <h3>Privacy First</h3>
+                        <p>Your documents are processed securely and never stored after extraction. What happens in AIReadable stays in AIReadable.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2 class="fw-bold">How <span class="text-gradient">AIReadable</span> Works</h2>
+                <p class="lead text-muted">Three simple steps to make any document AI readable</p>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Step 1 -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="0">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <h3>Upload Your Document</h3>
+                        <p>Drag and drop your PDF, image, or scanned document into our secure platform.</p>
+                        <img src="https://placehold.co/300x200/4361ee/FFFFFF/png?text=Upload" alt="Upload document" class="img-fluid mt-4 rounded-3">
+                    </div>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <h3>Advanced OCR Processing</h3>
+                        <p>Our AI-optimized OCR engine extracts text while preserving structure and formatting.</p>
+                        <img src="https://placehold.co/300x200/4361ee/FFFFFF/png?text=Process" alt="OCR processing" class="img-fluid mt-4 rounded-3">
+                    </div>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <h3>Use with Any LLM</h3>
+                        <p>Copy the processed text or send it directly to your favorite AI platform.</p>
+                        <img src="https://placehold.co/300x200/4361ee/FFFFFF/png?text=Use" alt="Use with LLM" class="img-fluid mt-4 rounded-3">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Counter Section -->
+    <section class="counter-section">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="0">
+                    <div class="counter-card">
+                        <div class="counter-number" id="user-counter">257</div>
+                        <div class="counter-label">People on Waitlist</div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="counter-card">
+                        <div class="counter-number">10,000+</div>
+                        <div class="counter-label">Documents Processed</div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="counter-card">
+                        <div class="counter-number">98%</div>
+                        <div class="counter-label">OCR Accuracy</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Pricing Section -->
+    <section id="pricing" class="section-padding">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2 class="fw-bold">Simple, Transparent <span class="text-gradient">Pricing</span></h2>
+                <p class="lead text-muted">Choose the plan that fits your needs</p>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Free Plan -->
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="0">
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h4>Free</h4>
+                            <div class="pricing-price">
+                                $0<small class="text-muted">/mo</small>
+                            </div>
+                        </div>
+                        <div class="pricing-body">
+                            <ul class="list-unstyled">
+                                <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i> 10 documents per month</li>
+                                <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i> Up to 10 pages per document</li>
+                                <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i> Basic OCR functionality</li>
+                                <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i> Web interface access</li>
+                                <li class="mb-3 text-muted"><i class="bi bi-x-circle me-2"></i> Table recognition</li>
+                                <li class="mb-3 text-muted"><i class="bi bi-x-circle me-2"></i> API access</li>
+                            </ul>
+                            <a href="#waitlist" class="btn btn-outline-primary w-100 mt-4">Join Waitlist</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pro Plan -->
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="pricing-card">
+                        <div class="pricing-header pricing-popular">
+                            <span class="badge bg-white text-primary mb-2">Most Popular</span>
+                            <h4>Pro</h4>
+                            <div class="pricing-price">
+                                $19<small class="text-muted">/mo</small>
+                            </div>
+                        </div>
+                        <div class="pricing-body">
+                            <ul class="list-unstyled">
+                                <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i> 100 documents per month</li>
+                                <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i> Up to 50 pages per document</li>
+                                <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i> Enhanced OCR accuracy</li>
+                                <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i> Table recognition</li>
+                                <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i> Basic API access</li>
+                                <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i> Priority support</li>
+                            </ul>
+                            <a href="#waitlist" class="btn btn-primary w-100 mt-4">Join Waitlist</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Plan -->
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h4>Team</h4>
+                            <div class="pricing-price">
+                                $49<small class="text-muted">/mo</small>
+                            </div>
+                        </div>
+                        <div class="pricing-body">
+                            <ul class="list-unstyled">
+                                <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i> 500 documents per month</li>
+                                <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i> Up to 100 pages per document</li>
+                                <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i> Highest OCR accuracy</li>
+                                <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i> Advanced formatting preservation</li>
+                                <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i> Full API access</li>
+                                <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i> Multiple user accounts (5)</li>
+                            </ul>
+                            <a href="#waitlist" class="btn btn-outline-primary w-100 mt-4">Join Waitlist</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <p>Need more? <a href="mailto:enterprise@aireadable.com">Contact us</a> about our Enterprise plan with custom pricing.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2 class="fw-bold">What Early Users Are <span class="text-gradient">Saying</span></h2>
+                <p class="lead text-muted">Feedback from our beta testers</p>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Testimonial 1 -->
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="0">
+                    <div class="testimonial-card">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="testimonial-image bg-primary">
+                                <img src="https://placehold.co/60x60/4361ee/FFFFFF/png?text=S" alt="Sarah J." class="img-fluid">
+                            </div>
+                            <div>
+                                <h5 class="mb-0">Sarah J.</h5>
+                                <p class="text-muted mb-0">AI Researcher</p>
+                            </div>
+                        </div>
+                        <p class="mb-0">"AIReadable has saved me countless hours of manual copy-pasting from research papers. The table recognition is especially impressive - it preserves the structure perfectly for analysis with Claude."</p>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="testimonial-card">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="testimonial-image bg-primary">
+                                <img src="https://placehold.co/60x60/4361ee/FFFFFF/png?text=M" alt="Michael T." class="img-fluid">
+                            </div>
+                            <div>
+                                <h5 class="mb-0">Michael T.</h5>
+                                <p class="text-muted mb-0">Legal Tech Director</p>
+                            </div>
+                        </div>
+                        <p class="mb-0">"We process hundreds of legal documents weekly. AIReadable's OCR quality is superior to anything we've used before, and the formatting preservation makes a huge difference when analyzing contracts with LLMs."</p>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="testimonial-card">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="testimonial-image bg-primary">
+                                <img src="https://placehold.co/60x60/4361ee/FFFFFF/png?text=D" alt="David K." class="img-fluid">
+                            </div>
+                            <div>
+                                <h5 class="mb-0">David K.</h5>
+                                <p class="text-muted mb-0">Product Manager</p>
+                            </div>
+                        </div>
+                        <p class="mb-0">"The difference between copying text manually and using AIReadable is night and day. My ChatGPT analyses are so much more accurate now that it can see the proper document structure."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FAQ Section -->
+    <section id="faq" class="section-padding">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2 class="fw-bold">Frequently Asked <span class="text-gradient">Questions</span></h2>
+                <p class="lead text-muted">Everything you need to know about AIReadable</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-8 mx-auto" data-aos="fade-up">
+                    <div class="accordion" id="faqAccordion">
+                        <!-- FAQ Item 1 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    When will AIReadable launch?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    We're planning to launch in Q2 2025. Waitlist members will receive early access invitations in order of signup. The earlier you join, the sooner you'll get access!
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ Item 2 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    What document types are supported?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    AIReadable supports PDFs (both native and scanned), images (JPG, PNG, TIFF), and most common document formats. If it contains text that you can see, we can extract it for your LLM.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ Item 3 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    How does AIReadable compare to regular OCR tools?
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Unlike general OCR tools, AIReadable is specifically optimized for LLM input. We preserve document structure, formatting, and relationships that make text more meaningful to AI models. Our processing is designed to maintain the context and organization that helps LLMs understand the content better.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ Item 4 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                    Do you store my documents?
+                                </button>
+                            </h2>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    No. We take privacy seriously. Your documents are processed to extract text and then immediately deleted from our servers. We don't store or use your document content for any purpose other than providing the OCR service to you.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ Item 5 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                                    Will AIReadable integrate directly with LLM providers?
+                                </button>
+                            </h2>
+                            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    In our initial release, you'll be able to copy extracted text to use with any LLM. We're planning direct integrations with major LLM providers like OpenAI, Anthropic, and others in future updates. Our roadmap includes one-click sending to your favorite AI platforms.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container text-center" data-aos="fade-up">
+            <h2 class="display-5 fw-bold mb-4">Ready to transform your document workflow?</h2>
+            <p class="lead mb-4">Join the waitlist today and be the first to experience AIReadable when we launch.</p>
+            <a href="#waitlist" class="btn btn-light btn-lg px-5">Join Waitlist Now</a>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <h3 class="mb-4">AIReadable</h3>
+                    <p>Make any document instantly AI readable. Extract high-quality text from PDFs and images for perfect LLM input.</p>
+                    <div class="social-links mt-4">
+                        <a href="#" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="bi bi-github"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-6 col-lg-2 mb-4 mb-lg-0">
+                    <h5 class="mb-4">Product</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-6 col-lg-2 mb-4 mb-lg-0">
+                    <h5 class="mb-4">Company</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-6 col-lg-2 mb-4 mb-lg-0">
+                    <h5 class="mb-4">Legal</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Security</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-6 col-lg-2 mb-4 mb-lg-0">
+                    <h5 class="mb-4">Support</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">API</a></li>
+                        <li><a href="#">Status</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <hr class="my-5 bg-light opacity-25">
+            
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    <p class="mb-0">&copy; 2025 AIReadable. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0">Made with ❤️ for the AI community</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script>
+        // Initialize AOS animation library
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100,
+        });
+        
+        // Counter animation
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Animate counter numbers
+            function animateCounter(element, target, duration) {
+                let start = 0;
+                const increment = target > 0 ? Math.ceil(target / (duration / 16)) : 0;
+                const timer = setInterval(() => {
+                    start += increment;
+                    element.textContent = start;
+                    if (start >= target) {
+                        element.textContent = target;
+                        clearInterval(timer);
+                    }
+                }, 16);
+            }
+            
+            // Observe counters and animate when visible
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const counterElement = entry.target;
+                        const target = parseInt(counterElement.textContent, 10);
+                        animateCounter(counterElement, target, 2000);
+                        observer.unobserve(counterElement);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            document.querySelectorAll('.counter-number').forEach(counter => {
+                observer.observe(counter);
+            });
+        });
+    </script>
+</body>
+</html>
